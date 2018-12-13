@@ -1,0 +1,67 @@
+<view>
+  <view class="rowCon">
+    <view class="row">
+      <view class="row_l">维修信息</view>
+      <view class="row_r">
+        <view>{{info.phoneBrand}}{{info.phoneModel}}{{info.colorName}}</view>
+        <view wx:for="{{info.Failurelist}}" wx:key="{{index}}" wx:for-item="jtem">
+          <text>{{jtem.desc}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="row">
+      <view class="row_l">实付金额</view>
+      <view class="row_r">￥{{info.totalPrice}}</view>
+    </view>
+    <view class="row">
+      <view class="row_l">订单编号</view>
+      <view class="row_r">{{info.orderSn}}</view>
+    </view>
+    <view class="row">
+      <view class="row_l">完成时间</view>
+      <view class="row_r">{{info.dealTime}}</view>
+    </view>
+  </view>
+  <view class="rowCon">
+    <view class="row row1 border_b">
+      <view class="row_l">处理方式</view>
+      <view class="row_r algin_r">上门返修</view>
+    </view>
+    <view class="block">
+      <view class="selectCon addressCon" catchtap="openwin" data-url="address_back">
+        <image src="../../images/address.png" catchtap="openwin" data-url="address_back"></image>
+        <text class="text" catchtap="openwin" data-url="address_back">{{info.serverAddress}}</text>
+        <text class="arrows" catchtap="openwin" data-url="address_back"></text>
+      </view>
+      <view class="selectCon timeCon" catchtap="selectConTime">
+        <image src="../../images/time.png" catchtap="selectConTime"></image>
+        <text class="text" catchtap="selectConTime">{{info.timeStr}}</text>
+        <text class="arrows" catchtap="selectConTime"></text>
+      </view>
+    </view>
+  </view>
+  <textarea class="textarea" placeholder-style="placeholder" placeholder="点击填写返修原因（请填写尽可能详细的返修原因，便于客服安排工程师返修）"  bindinput="inputMark"  />
+  <view class="imgCon">
+    <view wx:for="{{imgArr}}" wx:key="{{index}}">
+      <image src="{{item}}" bindtap="previewImage" data-url="{{item}}"></image>
+      <text data-index="{{index}}" bindtap="imgDel">X</text>
+    </view>
+    <view class="addImg" bindtap="addImg">+</view>
+  </view>
+  <view class="confirm" catchtap="confirm">提交返修申请</view>
+</view>
+<!--时间蒙层-->
+<view class="timeShade" hidden="{{timeShadeFlag ? true : false}}">
+  <view class="timeSelectCon">
+    <view class="clearfix">
+      <view class="timeSelect_l">
+        <view wx:for="{{dateArr}}" wx:key="{{index}}" class="{{item.class ? 'active' : ''}}" data-index="{{index}}" catchtap="selectDate">{{item.text}}</view>
+      </view>
+      <view class="timeSelect_r">
+        <view wx:for="{{timeArr}}" wx:key="{{index}}" class="{{item.class ? 'active' : ''}}" data-index="{{index}}" data-text="{{item.text}}" catchtap="selectTime">{{item.text}}</view>
+      </view>
+    </view>
+    <view class="timeSelect_btn" catchtap="cancle">取消</view>
+  </view>
+</view>
+<!--end时间蒙层-->

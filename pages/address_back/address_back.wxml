@@ -1,0 +1,17 @@
+<view class="addressSelectCon">
+  <view class="addressSelectCon_row" wx:for="{{listArr}}" wx:key="{{index}}" data-province="{{item.province}}" data-city="{{item.city}}" data-district="{{item.district}}" data-address="{{item.address}}" data-id="{{item.addressID}}" catchtap="select">
+    <view class="{{item.class ?  'addressSelectCon_row_l_active' : 'addressSelectCon_row_l'}}" data-province="{{item.province}}" data-city="{{item.city}}" data-district="{{item.district}}" data-address="{{item.address}}" data-id="{{item.addressID}}" catchtap="select"></view>
+    <view class="addressSelectCon_content" data-id="{{item.addressID}}"  data-province="{{item.province}}" data-city="{{item.city}}" data-district="{{item.district}}" data-address="{{item.address}}" catchtap="select">
+      <view data-id="{{item.addressID}}"  data-province="{{item.province}}" data-city="{{item.city}}" data-district="{{item.district}}" data-address="{{item.address}}" catchtap="select">{{item.consignee}}</view>
+      <view data-id="{{item.addressID}}" data-province="{{item.province}}" data-city="{{item.city}}" data-district="{{item.district}}" data-address="{{item.address}}" catchtap="select">{{item.province}}{{item.city}}{{item.district}}{{item.address}}</view>
+    </view>
+    <image src="../../images/edit.png" class="edit" catchtap="openwin" data-id="{{item.addressID}}" data-name="{{item.consignee}}" data-phone="{{item.phone}}" data-province="{{item.province}}" data-city="{{item.city}}" data-district="{{item.district}}" data-address="{{item.address}}" data-url="addressEdit"></image>
+    <image src="../../images/del.png" class="del" catchtap="del" data-id="{{item.addressID}}"></image>
+  </view>
+  <view class="addressSelectCon_row" catchtap="openwin" data-url="addressEdit">
+    <view class="jiahao" catchtap="openwin" data-url="addressEdit">＋</view>
+    <view class="addressSelectCon_content" catchtap="openwin" data-url="addressEdit">
+      <view catchtap="openwin" data-url="addressEdit">新增服务地址</view>
+    </view>
+  </view>
+</view>

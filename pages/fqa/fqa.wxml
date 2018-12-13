@@ -1,0 +1,9 @@
+<view class="fqaCon">
+  <view class="fqa_row" wx:for="{{data}}" wx:key="{{index}}">
+    <view class="fqa_row_t border_b" catchtap="taggle" data-index="{{index}}">
+      <view class="fqa_title" catchtap="taggle" data-index="{{index}}">{{item.title}}</view>
+      <view class="arrows {{item.flag ? 'arrows_down' : 'arrows_up'}}" catchtap="taggle" data-index="{{index}}"></view>
+    </view>
+    <view hidden="{{item.flag ? true : false}}" class="fqa_content border_b">{{item.content}}</view>
+  </view>
+</view>

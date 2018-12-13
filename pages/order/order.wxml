@@ -1,0 +1,21 @@
+<view class="row" wx:for="{{list}}" wx:key="{{index}}" wx:for-item="item">
+  <view class="clearfix border_b row_t" data-orderid="{{item.orderID}}" data-url="order_details" catchtap="openwin">
+    <text data-orderid="{{item.orderID}}" data-url="order_details" catchtap="openwin">订单编号：</text>
+    <text data-orderid="{{item.orderID}}" data-url="order_details" catchtap="openwin">{{item.orderSn}}</text>
+    <text class="row_status" data-orderid="{{item.orderID}}" data-url="order_details" catchtap="openwin">{{item.tips}}</text>
+  </view>
+  <view class="clearfix border_b row_m" data-orderid="{{item.orderID}}" data-url="order_details" catchtap="openwin">
+    <view class="row_name" data-orderid="{{item.orderID}}" data-url="order_details" catchtap="openwin">{{item.phoneBrand}} {{item.phoneModel}} {{item.colorName}}</view>
+    <view class="row_content" wx:for="{{item.Failurelist}}" wx:key="{{index}}" wx:for-item="jtem" data-orderid="{{item.orderID}}" data-url="order_details" catchtap="openwin">{{jtem.desc}}</view>
+  </view>
+  <view class="clearfix row_b">
+    <text>合计(估计)：</text>
+    <text>￥{{item.totalPrice}}</text>
+    <text class="row_b_btn" wx:if="{{item.isComment == 0}}" hidden="{{item.status == 2 ? false : true}}" data-masterid="{{item.masterID}}" data-orderid="{{item.orderID}}" data-url="appraise" catchtap="openwin">评价订单</text>
+    <text wx:else class="row_b_r">已评价</text>
+  </view>
+</view>
+<view class="contact">
+  <contact-button type="default-light" size="125" session-from="小程序加速度手机维修"></contact-button>
+  <image src="../../images/contact.png"></image>
+</view>

@@ -1,0 +1,78 @@
+<view class="parent">
+
+
+     <view class="silder" style="height:{{silderHieght}}px">
+        <scroll-view style="height:{{silderHieght}}px" class="silder_sc" scroll-y="true">
+        
+        <view data-index="{{index}}" bindtap="category" wx:for="{{categorys}}" class="silder_item {{item.active}}">{{item.mobile_name}}</view>
+        
+        </scroll-view>
+     </view>
+
+
+  <view class="view_right">
+      
+      <scroll-view style="height:{{silderHieght}}px" scroll-y="true">
+
+
+      <view class="view_header">
+      
+
+      <view  bindtap="select" data-index="{{index}}" wx:for="{{categorys[index].ptype}}" class="header_item {{item.select}}">{{item.name}}</view>
+      
+      </view>
+  
+
+
+  <view class="hot clearfix">
+
+      <view bindtap="goods" data-index="{{index}}" wx:for="{{goods}}" class="hot_item">
+      <image mode="aspectFit" src="{{item.image}}"></image>
+          <text>{{item.mobile_name}}</text>
+      </view>
+      
+      
+    
+  </view>
+</scroll-view>
+
+
+  </view>
+   
+</view>
+
+
+
+<view class="cart-detail" hidden="{{!showVerifyPhone}}">
+  <view class="mask" bindtap="showVerifyPhone"></view>
+  <view class="verify-phone">
+    <view class="content">
+      <image src="{{goods[gindex].image}}"></image>
+      <view class="content_right">
+        <view class="content_text">{{goods[gindex].mobile_name}}</view>
+
+        <view style="font-size:28rpx;color:#666" class="content_text">{{goods[gindex].name}}</view>
+        
+      </view>
+    </view>
+
+    <view class="content_bottom">
+          
+    </view>
+
+
+    <view class="view_color">
+       <view class="color_title">
+       颜色
+       </view>
+       <view class="colors">
+       
+       <text bindtap="cselect" data-index="{{index}}" class="{{goods[gindex].colors[index].select}}" wx:for="{{goods[gindex].colors}}">{{item.name}}</text>
+       
+       </view>
+    </view>
+
+   <view bindtap="next" class="next">下一步</view>
+
+  </view>
+</view>

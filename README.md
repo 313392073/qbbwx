@@ -1,2 +1,2 @@
-# qbbwx
-this is a small weichat
+# samll
+小程序

@@ -1,0 +1,60 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/order/order",
+    "pages/my/my",
+    "pages/cart/index",
+    "pages/pay/pay",
+		"pages/category/index",
+    "pages/cart/cart",
+    "pages/store/index",
+    "pages/store/index1",
+    "pages/select_phone/select_phone",
+    "pages/select_fault/select_fault",
+    "pages/fillout_order/fillout_order",
+    "pages/address/address",
+    "pages/address_back/address_back",
+    "pages/addressEdit/addressEdit",
+    "pages/timeList/timeList",
+    "pages/coupon/coupon",
+    "pages/order_details/order_details",
+    "pages/order_success/order_success",
+    "pages/appraise/appraise",
+    "pages/feedback/feedback",
+    "pages/fqa/fqa",
+    "pages/serverFlow/serverFlow",
+    "pages/back_repair/back_repair",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#E70012",
+    "navigationBarTitleText": "快百帮维修连锁",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#999",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+		"selectedColor": "#e70012",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "维修下单",
+      "iconPath": "images/icon_maintain.png",
+      "selectedIconPath": "images/icon_maintain_h.png"
+    },
+    {
+      "pagePath": "pages/cart/index",
+      "text": "订单",
+      "iconPath": "images/icon_order.png",
+      "selectedIconPath": "images/icon_order_h.png"
+    },
+    
+    {
+      "pagePath": "pages/my/my",
+      "text": "我的",
+      "iconPath": "images/icon_my.png",
+      "selectedIconPath": "images/icon_my_h.png"
+    }]
+  }
+}

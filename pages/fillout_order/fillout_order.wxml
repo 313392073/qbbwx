@@ -1,0 +1,206 @@
+<view class="main">
+  <view class="title1">
+    <image src="{{data.gimage}}"></image>
+    <text>{{data.brand}}</text>
+    <text>{{data.model}}</text>
+    <text>{{data.color}}</text>
+  </view>
+</view>
+<view class="view_wx" wx:for="{{data.combTampArr}}">
+  <text>{{item.itemstr}}</text>
+  <text style="color:red">￥{{item.price}}元</text>
+</view>
+<view class="defalutImgCon">
+  <image src="{{item}}" wx:for="{{data.imgArr}}" wx:key="{{index}}"></image>
+</view>
+<view class="nav">
+  <text class="active">选择维修方式</text>
+</view>
+<view class="view_tab">
+  <view bindtap="tab1" wx:if="{{tab == 0}}" class="tab_item tactive">
+    <image src="/images/icon_ot1s.png"></image>
+    <text>上门维修</text>
+  </view>
+  <view bindtap="tab1" wx:else class="tab_item">
+    <image src="/images/icon_ot1.png"></image>
+    <text>上门维修</text>
+  </view>
+  <view bindtap="tab2" wx:if="{{tab == 1}}" class="tab_item tactive">
+    <image src="/images/icon_ot2s.png"></image>
+    <text>到店维修</text>
+  </view>
+  <view bindtap="tab2" wx:else class="tab_item">
+    <image src="/images/icon_ot2.png"></image>
+    <text>到店维修</text>
+  </view>
+  <view bindtap="tab3" wx:if="{{tab == 2}}" class="tab_item tactive">
+    <image src="/images/icon_ot3s.png"></image>
+    <text>邮寄维修</text>
+  </view>
+  <view bindtap="tab3" wx:else class="tab_item">
+    <image src="/images/icon_ot3.png"></image>
+    <text>邮寄维修</text>
+  </view>
+</view>
+<view class="view_tab">
+  <view wx:if="{{tab == 0}}" class="tab_item">
+    <image style="width:40rpx;height:40rpx;margin-top:-10rpx;" src="/images/icon_zx.png"></image>
+  </view>
+  <view wx:else class="tab_item">
+    <image style="width:40rpx;height:40rpx;margin-top:-10rpx;" src="/images/icon_zx1.png"></image>
+  </view>
+  <view wx:if="{{tab == 1}}" class="tab_item">
+    <image style="width:40rpx;height:40rpx;margin-top:-10rpx;" src="/images/icon_zx.png"></image>
+  </view>
+  <view wx:else class="tab_item">
+    <image style="width:40rpx;height:40rpx;margin-top:-10rpx;" src="/images/icon_zx1.png"></image>
+  </view>
+  <view wx:if="{{tab == 2}}" class="tab_item">
+    <image style="width:40rpx;height:40rpx;margin-top:-10rpx;" src="/images/icon_zx.png"></image>
+  </view>
+  <view wx:else class="tab_item">
+    <image style="width:40rpx;height:40rpx;margin-top:-10rpx;" src="/images/icon_zx1.png"></image>
+  </view>
+</view>
+<view wx:if="{{tab == 0}}" class="view_red">
+  目前上门维修只支持部分城市和地区,更多城市和地区敬请期待</view>
+<view wx:if="{{tab == 2}}" class="view_red">
+  <text >
+    快百帮维修连锁为客户承担来回的邮费,请放心邮寄
+    邮寄地址:崇州市东城国际99号2号门4-7号3楼（万达广场后门停车场旁）
+    收件人:显达通信
+    联系电话:13032887722
+    请邮寄之前拨打本公司客服电话13032887722
+  </text>
+</view>
+<view wx:if="{{tab == 0}}">
+  <view class="view-ares">
+    <view catchtap="open" class="area_item">
+      <text>{{province}}</text>
+      <image src="/images/icon_zx2.png"></image>
+    </view>
+    <view catchtap="open" class="area_item">
+      <text>{{city}}</text>
+      <image src="/images/icon_zx2.png"></image>
+    </view>
+    <view catchtap="open" class="area_item">
+      <text>{{county}}</text>
+      <image src="/images/icon_zx2.png"></image>
+    </view>
+  </view>
+  <view class="view-address">
+    <view class="address_item">
+      <input bindinput="input" data-type="address" class="text input" placeholder-class="ptext" style="z-index: 0;" placeholder-style="z-index: 0;" placeholder="请输入详细地址"></input>
+    </view>
+  </view>
+
+  <!--上门维修-->
+  <view class="section">
+    <view class="block">
+      <view class="selectCon timeCon" catchtap="selectConTime">
+        <text class="text" catchtap="selectConTime">{{data.timeStr}}</text>
+        <text class="arrows" catchtap="selectConTime"></text>
+      </view>
+
+      <view class="selectCon timeCon" catchtap="store">
+        <text wx:if="{{store}}" class="text" catchtap="store">{{store.store_name}}</text>
+        <text wx:else class="text" catchtap="store">请选择门店</text>
+        <text class="arrows" catchtap="store"></text>
+      </view>
+
+
+      
+      <view class="selectCon timeCon">
+        <input type="number" bindinput="input" data-type="phone" class="text input" placeholder-class="ptext" placeholder="请输入11位手机号码"></input>
+      </view>
+      <view class="selectCon timeCon">
+        <input bindinput="input" data-type="code" class="text" placeholder-class="ptext" placeholder="请输入验证码"></input>
+        <text  catchtap="getnum" style="width:150rpx;color:red;font-size:22rpx">{{time}}</text>
+      </view>
+      <view class="selectCon">
+        <input bindinput="input" data-type="name" class="text input" placeholder-class="ptext" placeholder="请输入姓名"></input>
+      </view>
+    </view>
+  </view>
+
+  <view>
+  <view class="block">
+  </view>
+  <view class="block youCon" style="display: flex;flex-direction: row;align-items: center;justify-content: space-between;" catchtap="openwin" data-url="coupon">
+    <view class="classname" style="display: flex;flex-direction: row;align-items: center;">
+      <text catchtap="openwin" style="color:red;" data-url="coupon">优惠</text>
+      <text class="youCon_text" catchtap="openwin" data-url="coupon">{{data.couponName}}</text>
+    </view>
+    <text class="arrows" catchtap="openwin" data-url="coupon"></text>
+  </view>
+  <view class="block priceCon">
+    <view>
+      <text>维修价格</text>
+      <text class="priceCon_r">￥{{data.price}}</text>
+    </view>
+    <view>
+      <text>优惠</text>
+      <text class="priceCon_r">-￥{{data.couponPrice}}</text>
+    </view>
+    <view>
+      <text>预计需支付</text>
+      <text class="priceCon_r">￥{{data.payPrice}}</text>
+    </view>
+    <view class="priceCon_tip">
+      维修总价为预计费用，价格以最终维修方案为准
+    </view>
+  </view>
+  <view class="block leaveWord">
+    <text>留言</text>
+    <input placeholder="点此给维修工程师留言" placeholder-class="placeholder" bindblur="blurMark" bindinput="inputMark" value="{{data.desc}}" />
+  </view>
+  <view class="footer_visit">
+    <view class="footer_visit_l">
+      <text class="footer_visit_l_price">￥{{data.payPrice}}</text>
+      <text class="footer_visit_l_you">已优惠￥{{data.couponPrice}}</text>
+    </view>
+    <view class="footer_visit_r" catchtap="confirm">
+      <text catchtap="confirm">提交预约</text>
+    </view>
+  </view>
+</view>
+
+<!--end上门维修-->
+
+<!--时间蒙层-->
+<view class="timeShade" hidden="{{timeShadeFlag ? true : false}}">
+  <view class="timeSelectCon">
+    <view class="clearfix">
+      <view class="timeSelect_l">
+        <view wx:for="{{dateArr}}" wx:key="{{index}}" class="{{item.class ? 'active' : ''}}" data-index="{{index}}" catchtap="selectDate">{{item.text}}</view>
+      </view>
+      <view class="timeSelect_r">
+        <view wx:for="{{timeArr}}" wx:key="{{index}}" class="{{item.class ? 'active' : ''}}" data-index="{{index}}" data-text="{{item.text}}" catchtap="selectTime">{{item.text}}</view>
+      </view>
+    </view>
+    <view class="timeSelect_btn" catchtap="cancle">取消</view>
+  </view>
+</view>
+
+<!--end时间蒙层-->
+<view wx:if="{{condition}}" class="citypicker">
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 340px;" value="{{value}}" bindchange="bindChange" class="citybody">
+    <view class="cityheader">
+      <view bindtap="open" class="city-cancel">取消</view>
+      <view bindtap="open" class="city-true">确定</view>
+    </view>
+    <picker-view-column>
+      <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>
+
+
+
+</view>

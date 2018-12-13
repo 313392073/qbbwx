@@ -1,0 +1,36 @@
+<view class="top">
+  <view class="imgCon">
+    <image src="{{userInfo.avatarUrl}}"></image>
+  </view>
+  <view class="name" style="color:#000;">{{userInfo.nickName}}</view>
+</view>
+<view class="rowCon">
+  <view class="row border_b" catchtap="openwin" data-url="address">
+    <view class="row_l dz" catchtap="openwin" data-url="address">
+      <image src="../../images/icondw.png"></image>
+    </view>
+    <view class="row_text" catchtap="openwin" data-url="address">我的地址</view>
+    <view class="arrows" catchtap="openwin" data-url="address"></view>
+  </view>
+  <view class="row border_b" catchtap="openwin" data-url="coupon">
+    <view class="row_l yhq" catchtap="openwin" data-url="coupon">
+      <image src="../../images/iconyhj.png"></image>
+    </view>
+    <view class="row_text" catchtap="openwin" data-url="coupon">优惠券</view>
+    <view class="arrows" catchtap="openwin" data-url="coupon"></view>
+  </view>
+  <view class="row" catchtap="tel">
+    <view class="row_l lxkf" catchtap="tel">
+      <image src="../../images/iconkf.png"></image>
+    </view>
+    <view class="row_text" catchtap="tel">
+      联系客服
+      <text catchtap="tel">13032887722</text>
+    </view>
+    <view class="arrows" catchtap="tel"></view>
+  </view>
+</view>
+<view class="contact">
+  <contact-button type="default-light" size="125" session-from="小程序加速度手机维修"></contact-button>
+  <image src="../../images/contact.png"></image>
+</view>

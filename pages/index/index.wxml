@@ -1,0 +1,178 @@
+<view hidden style="width:750rpx;height:105rpx;background:#fff;">
+  <image src="/images/icon_logo.png" style="width:320rpx;height:105rpx;background:#fff;margin-left:215rpx"></image>
+</view>
+
+<image hidden class="head" src="{{userInfo.avatarUrl}}"></image>
+
+
+<view class='wrapper'>
+<view class="xiadan">
+
+  <!-- <image src='/images/icon2s.png' style="width:48rpx;height:48rpx;margin-left:20rpx;"> -->
+  <!-- </image> -->
+  <text style='color:#fff; margin-left:20rpx;font-size:32rpx;width:530rpx;'>最近:{{store.store_address}}({{store.dis}})</text>
+
+
+  <text style="margin-left:10rpx;" class="btn1" bindtap="map">导航</text>
+</view>
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{banner}}" wx:key="{{index}}">
+    <swiper-item >
+      <image src="{{item.ad_code}}" class="banner-img" mode="scaleToFill" />
+    </swiper-item>
+  </block>
+</swiper>
+</view>
+
+<view class='weixiu'>
+<image bindtap="more" src='/images/icon_zhome.png'></image>
+</view>
+
+
+
+
+<view hidden class="flow">
+  <view class="view_flow">
+    <view class="flow_item">
+      <image src="/images/home_1.png"></image>
+      <text>选择故障</text>
+    </view>
+
+    <image src="/images/home_d.png" style="margin-top:20rpx;"></image>
+
+    <view class="flow_item">
+      <image src="/images/home_2.png"></image>
+      <text>提交订单</text>
+    </view>
+
+    <image src="/images/home_d.png" style="margin-top:20rpx;"></image>
+
+    <view class="flow_item">
+      <image src="/images/home_3.png"></image>
+      <text>上门维修</text>
+    </view>
+
+    <image src="/images/home_d.png" style="margin-top:20rpx;"></image>
+
+    <view class="flow_item">
+      <image src="/images/home_4.png"></image>
+      <text>支付费用</text>
+    </view>
+
+
+
+
+  </view>
+  <view class="btn" bindtap="more" data-url="select_phone">
+    <image src="/images/mswx.png"></image>
+  </view>
+</view>
+
+
+
+<view class="hotCon">
+  <view class="hotTitle">
+    <image style="margin-top:0rpx;" src="/images/dian.png"></image>
+    <text style="margin-top:5rpx;"> | 热门品牌</text>
+  </view>
+  <view class="hot clearfix">
+
+
+    <view class="hot_item" wx:for="{{categorys}}" data-index="{{index}}" bindtap="service">
+      <text>{{item.mobile_name}} 维修</text>
+      <image src="{{item.image}}"></image>
+
+    </view>
+
+
+
+  </view>
+</view>
+
+<view class="more" bindtap="more">
+  查看更多机型和故障
+  <image src="/images/icon_more.png"></image>
+</view>
+
+
+
+<view class="more" style="margin-top:4rpx;padding-top:20rpx;">
+
+  <view class="action_item">
+    <contact-button style="position:relative;padding-right:40rpx; opacity:1;z-index:10" type="default-light" size="125" session-from="小程序维修">
+      <image src="/images/icon_kefu.png" style='position:absolute;top:0;left:0;z-index:0;'></image>
+      <view class='kfzx'>客服中心</view>
+    </contact-button>
+  </view>
+
+  <view bindtap="store" class="action_item">
+    <image src="/images/icon_address.png"></image>
+    <text>门店地址</text>
+  </view>
+  <!-- <button open-type="contact" class='action_item buttonkefu'>
+   <image src="/images/icon_kefu.png"></image> <text>客服中心</text>
+</button>
+<button bindtap="store"  class="action_item buttonkefu">
+<image src="/images/icon_address.png"></image>
+<text>门店地址</text>
+</button> -->
+</view>
+
+
+
+<view class="silde clearfix">
+  <view class="b_r">
+
+    <image src="../../images/home_b1.png" data-url="feedback"></image>
+
+    <text data-url="feedback">免费上门</text>
+  </view>
+
+
+
+
+  <view class="b_r">
+
+    <image src="../../images/home_b2.png" data-url="feedback"></image>
+
+    <text data-url="feedback">专业工程师</text>
+  </view>
+
+
+  <view class="b_r">
+
+    <image src="../../images/home_b3.png" data-url="feedback"></image>
+
+    <text data-url="feedback">原厂正品</text>
+  </view>
+
+
+  <view class="b_r">
+
+    <image src="../../images/home_b4.png" data-url="feedback"></image>
+
+    <text catchtap="openwin" data-url="feedback">维修过程录像</text>
+  </view>
+
+
+  <view class="b_r">
+
+    <image src="../../images/home_b5.png" data-url="feedback"></image>
+
+    <text data-url="feedback">180天质保</text>
+  </view>
+
+
+</view>
+
+
+<view class="more" style="margin-top:4rpx;padding-top:20rpx;">
+  客服电话:13032887722 服务时间:09:00－22:00
+</view>
+
+
+
+<view class="contact">
+  <contact-button type="default-light" size="125" session-from="小程序手机维修"></contact-button>
+  <image src="../../images/contact.png"></image>
+</view>

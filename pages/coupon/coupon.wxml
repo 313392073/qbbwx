@@ -1,0 +1,27 @@
+<view class="couponCon" wx:for="{{listArr}}" wx:key="{{index}}" data-id="{{item.id}}" data-text="{{item.name}}" data-price="{{item.money}}" catchtap="select">
+  <text class="circle circle_l" data-id="{{item.id}}" data-text="{{item.name}}" data-price="{{item.money}}" catchtap="select"></text>
+  <view class="couponCon_l" data-id="{{item.id}}" data-text="{{item.name}}" data-price="{{item.money}}"  catchtap="select">
+    <text class="couponCon_l_l" data-id="{{item.id}}" data-text="{{item.name}}" data-price="{{item.money}}" catchtap="select">￥</text>
+    <text class="couponCon_l_price" data-id="{{item.id}}" data-text="{{item.name}}" data-price="{{item.money}}" catchtap="select">{{item.money}}</text>
+  </view>
+  <view class="couponCon_r" data-id="{{item.id}}" data-text="{{item.name}}" data-price="{{item.money}}" catchtap="select">
+    <view class="couponCon_r_name" data-id="{{item.id}}" data-text="{{item.name}}" data-price="{{item.money}}" catchtap="select">{{item.name}}</view>
+    <view class="couponCon_r_tip" data-id="{{item.id}}" data-text="{{item.name}}" data-price="{{item.money}}" catchtap="select">{{item.condition}}元起用</view>
+    <view class="couponCon_r_time" data-id="{{item.id}}" data-text="{{item.name}}" data-price="{{item.money}}" catchtap="select">有效期：{{item.use_end_time}}</view>
+  </view>
+  <text class="circle circle_r" data-id="{{item.id}}" data-text="{{item.name}}" data-price="{{item.money}}" catchtap="select"></text>
+</view>
+
+<!--<view class="couponCon">
+  <text class="circle circle_l"></text>
+  <view class="couponCon_l">
+    <text class="couponCon_l_l">￥</text>
+    <text class="couponCon_l_price">300</text>
+  </view>
+  <view class="couponCon_r">
+    <view class="couponCon_r_name">新人专用维修券</view>
+    <view class="couponCon_r_tip">0元起用</view>
+    <view class="couponCon_r_time">有效期：2016-01-01</view>
+  </view>
+  <text class="circle circle_r"></text>
+</view>-->

@@ -1,0 +1,32 @@
+<view class="rowCon">
+  <view class="row_title clearfix" data-type="brand" bindtap="taggle">
+    <text class="row_title_l" data-type="brand" catchtap="taggle">品牌</text>
+    <text class="row_title_m" data-type="brand" catchtap="taggle">{{select_brand}}</text>
+    <text class="row_title_r" data-type="brand" catchtap="taggle"></text>
+  </view>
+  <view class="row_content" hidden="{{flag_brand_content ? true : false}}">
+    <text wx:for="{{brandArr}}" wx:key="{{index}}" class="{{brand_num == index ? 'active' : ''}}" data-num="{{index}}"  data-id="{{item.id}}" data-text="{{item.mobile_name}}" data-type="brand" bindtap="select_brand">{{item.mobile_name}}</text>    
+  </view>
+</view>
+
+<view class="rowCon" hidden="{{flag_modelCon ? true : false}}">
+  <view class="row_title clearfix" data-type="model" bindtap="taggle">
+    <text class="row_title_l"  data-type="model" catchtap="taggle">型号</text>
+    <text class="row_title_m"  data-type="model" catchtap="taggle">{{select_model}}</text>
+    <text class="row_title_r"  data-type="model" catchtap="taggle"></text>
+  </view>
+  <view class="row_content" hidden="{{flag_model_content ? true : false}}">
+    <text wx:for="{{modelArr}}"  wx:key="{{index}}"  class="{{model_num == index ? 'active' : ''}}" data-num="{{index}}"   data-id="{{item.id}}" data-sub_index="{{item.sub_index}}" data-text="{{item.mobile_name}}" data-type="model" bindtap="select_brand">{{item.mobile_name}}</text>  
+  </view>
+</view>
+
+<view class="rowCon" hidden="{{flag_colorCon ? true : false}}" data-type="color" bindtap="taggle">
+  <view class="row_title clearfix">
+    <text class="row_title_l">颜色</text>
+    <text class="row_title_m">{{select_color}}</text>
+    <text class="row_title_r"></text>
+  </view>
+  <view class="row_content" hidden="{{flag_color_content ? true : false}}">
+    <text  wx:for="{{colorArr}}"  wx:key="{{index}}"  class="{{color_num == index ? 'active' : ''}}" data-num="{{index}}"   data-id="{{item.id}}" data-text="{{item.name}}" data-type="color" bindtap="select_brand">{{item.name}}</text>  
+  </view>
+</view>

@@ -1,0 +1,21 @@
+<view class="masterInfoCon display-box-h box-align-center border_b">
+  <view class="headerImgCon">
+    <image src="/images/icon_wxp.png"></image>
+  </view>
+  <view class="flex-one masterInfo">
+    <view class="masterInfo_top">维修工程师：{{info.customer_name}}</view>
+    
+  </view>
+</view>
+<view>
+  <view class="starCon">
+    <text class="{{item.class ? 'star_active star_five' : 'star_five'}}" wx:for="{{starArr}}" wx:key="{{index}}" catchtap="selectStar" data-index="{{index}}"></text>
+  </view>
+  <view class="starTip">{{text}}</view>
+  <view hidden class="starBtn clearfix">
+    <text class="{{item.class ? 'starBtn_active' : ''}}"  wx:for="{{content}}" wx:key="{{index}}" data-index="{{index}}" catchtap="selectBtn">{{item.text}}</text>
+  </view>
+  <textarea class="textarea"  placeholder="其他想说的..." placeholder-class="placeholder" bindinput="textareaVal"/>
+  <view class="tip">所有评价均以匿名形式提交，请放心评价</view>
+  <view class="confirm" catchtap="confirm">匿名提交</view>
+</view>

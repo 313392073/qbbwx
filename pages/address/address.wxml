@@ -1,0 +1,17 @@
+<view class="addressSelectCon">
+  <view class="addressSelectCon_row" wx:for="{{addressObjects}}" wx:key="{{index}}" data-province="{{item.province}}" data-city="{{item.city}}" data-district="{{item.district}}" data-address="{{item.address}}" data-id="{{item.address_id}}" catchtap="select">
+    <view class="{{item.is_default == 1 ?  'addressSelectCon_row_l_active' : 'addressSelectCon_row_l'}}" data-province="{{item.province}}" data-city="{{item.city}}" data-district="{{item.district}}" data-address="{{item.address}}" data-id="{{item.address_id}}" catchtap="select"></view>
+    <view class="addressSelectCon_content" data-id="{{item.address_id}}"  data-province="{{item.province}}" data-city="{{item.city}}" data-district="{{item.district}}" data-address="{{item.address}}" catchtap="select">
+      <view data-id="{{item.address_id}}"  data-province="{{item.province}}" data-city="{{item.city}}" data-district="{{item.district}}" data-address="{{item.address}}" catchtap="select">{{item.consignee}}</view>
+      <view data-id="{{item.address_id}}" data-province="{{item.province}}" data-city="{{item.city}}" data-district="{{item.district}}" data-address="{{item.address}}" catchtap="select">{{item.province}}{{item.city}}{{item.district}}{{item.address}}</view>
+    </view>
+    <image src="../../images/edit.png" class="edit" catchtap="openwin" data-id="{{item.address_id}}" data-name="{{item.consignee}}" data-phone="{{item.mobile}}" data-province="{{item.province}}" data-city="{{item.city}}" data-district="{{item.district}}" data-address="{{item.address}}" data-url="addressEdit"></image>
+    <image src="../../images/del.png" class="del" catchtap="del" data-id="{{item.address_id}}"></image>
+  </view>
+  <view class="addressSelectCon_row" catchtap="openwin" data-url="addressEdit">
+    <view class="jiahao" catchtap="openwin" data-url="addressEdit">＋</view>
+    <view class="addressSelectCon_content" catchtap="openwin" data-url="addressEdit">
+      <view catchtap="openwin" data-url="addressEdit">新增服务地址</view>
+    </view>
+  </view>
+</view>

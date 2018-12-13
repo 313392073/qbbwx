@@ -1,0 +1,340 @@
+<view class="flow">
+  <view class="view_flow"  wx:if="{{info.order_status == 0}}">
+
+
+    <view class="flow_item">
+      <view class="flow_pos active">1</view>
+      <text>订单提交</text>
+    </view>
+    <view class="flow_line" style="margin-top:20rpx;"></view>
+    <view class="flow_item">
+      <view class="flow_pos">2</view>
+      <text>工程师出发</text>
+    </view>
+    <view class="flow_line" style="margin-top:20rpx;"></view>
+    <view class="flow_item">
+      <view class="flow_pos">3</view>
+      <text>维修完成</text>
+    </view>
+    <view class="flow_line" style="margin-top:20rpx;"></view>
+    <view class="flow_item">
+      <view class="flow_pos">4</view>
+      <text>评价完成</text>
+    </view>
+</view>
+
+
+<view class="view_flow"   wx:if="{{info.order_status == 3}}">
+    <view class="flow_item">
+      <view class="flow_pos active">1</view>
+      <text>订单已取消</text>
+      </view>
+    <view class="flow_line" style="margin-top:20rpx;"></view>
+    <view class="flow_item">
+      <view class="flow_pos">2</view>
+      <text>工程师出发</text>
+    </view>
+    <view class="flow_line" style="margin-top:20rpx;"></view>
+    <view class="flow_item">
+      <view class="flow_pos">3</view>
+      <text>维修完成</text>
+    </view>
+    <view class="flow_line" style="margin-top:20rpx;"></view>
+    <view class="flow_item">
+      <view class="flow_pos">4</view>
+      <text>评价完成</text>
+    </view>
+</view>
+
+
+
+<view class="view_flow"   wx:if="{{info.order_status == 1 && info.shipping_status == 0}}">
+    <view class="flow_item">
+      <view class="flow_pos active">1</view>
+      <text>订单提交</text>
+      </view>
+    <view class="flow_line" style="margin-top:20rpx;"></view>
+    <view class="flow_item">
+      <view class="flow_pos">2</view>
+      <text>工程师出发</text>
+    </view>
+    <view class="flow_line" style="margin-top:20rpx;"></view>
+    <view class="flow_item">
+      <view class="flow_pos">3</view>
+      <text>维修完成</text>
+    </view>
+    <view class="flow_line" style="margin-top:20rpx;"></view>
+    <view class="flow_item">
+      <view class="flow_pos">4</view>
+      <text>评价完成</text>
+    </view>
+</view>
+
+<view class="view_flow"   wx:if="{{info.order_status == 1 && info.shipping_status == 1}}">
+    <view class="flow_item">
+      <view class="flow_pos">1</view>
+      <text>订单提交</text>
+      </view>
+    <view class="flow_line" style="margin-top:20rpx;"></view>
+    <view class="flow_item">
+      <view class="flow_pos  active">2</view>
+      <text>工程师出发</text>
+    </view>
+    <view class="flow_line" style="margin-top:20rpx;"></view>
+    <view class="flow_item">
+      <view class="flow_pos">3</view>
+      <text>维修完成</text>
+    </view>
+    <view class="flow_line" style="margin-top:20rpx;"></view>
+    <view class="flow_item">
+      <view class="flow_pos">4</view>
+      <text>评价完成</text>
+    </view>
+</view>
+
+
+<view class="view_flow"   wx:if="{{info.order_status == 2}}">
+    <view class="flow_item">
+      <view class="flow_pos">1</view>
+      <text>订单提交</text>
+      </view>
+    <view class="flow_line" style="margin-top:20rpx;"></view>
+    <view class="flow_item">
+      <view class="flow_pos">2</view>
+      <text>工程师出发</text>
+    </view>
+    <view class="flow_line" style="margin-top:20rpx;"></view>
+    <view class="flow_item">
+      <view class="flow_pos  active">3</view>
+      <text>维修完成</text>
+    </view>
+    <view class="flow_line" style="margin-top:20rpx;"></view>
+    <view class="flow_item">
+      <view class="flow_pos">4</view>
+      <text>评价完成</text>
+    </view>
+</view>
+
+<view class="view_flow"   wx:if="{{info.order_status == 4}}">
+    <view class="flow_item">
+      <view class="flow_pos">1</view>
+      <text>订单提交</text>
+      </view>
+    <view class="flow_line" style="margin-top:20rpx;"></view>
+    <view class="flow_item">
+      <view class="flow_pos">2</view>
+      <text>工程师出发</text>
+    </view>
+    <view class="flow_line" style="margin-top:20rpx;"></view>
+    <view class="flow_item">
+      <view class="flow_pos">3</view>
+      <text>维修完成</text>
+    </view>
+    <view class="flow_line" style="margin-top:20rpx;"></view>
+    <view class="flow_item">
+      <view class="flow_pos  active">4</view>
+      <text>评价完成</text>
+    </view>
+</view>
+
+
+  
+</view>
+<view class="classname" style="background:#fff">
+  <view class="view_address">
+    <image src="/images/icon_addresss.png"></image>
+    <view class="address_right">
+      <text>{{info.nickName}} {{info.orderPhone}}</text>
+      <text>{{info.province}}{{info.city}}{{info.district}}</text>
+    </view>
+  </view>
+  <view class="view_line"></view>
+  <view class="view_address" style="margin-top:0;">
+    <image src="/images/icon_date.png"></image>
+    <view class="address_right">
+      <text style="margin-top:10rpx;">{{info.ordertime}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="view_phone">
+  <view class="phone_xh">
+    <text>设备型号</text>
+    <text style="color:#666">{{info.brandname}}{{info.modelname}}{{info.colorname}}</text>
+  </view>
+
+
+  <view wx:if="{{info.imel}}" class="phone_xq">
+    <view class="phone_xh">
+      <text> I M E L </text>
+      <text style="color:#666;margin-left:34rpx;"> {{info.imel}}</text>
+    </view>
+    
+  </view>
+
+
+  <view class="phone_xq">
+    <view class="phone_xh">
+      <text>故障详情</text>
+      <view class="spec">
+      <view  wx:for="{{info.spec}}">
+      <text style="color:#666">{{item.item}}</text>
+      <text style="color:#666;margin-right:0">{{item.price}}元</text>
+      </view>
+      </view>
+    </view>
+    
+  </view>
+
+
+  <view class="phone_xh">
+    <text>其他原因</text>
+    <text style="color:#666">{{info.textareaval}}</text>
+  </view>
+
+
+   <view class="defalutImgCon">
+  <image src="{{item}}" wx:for="{{info.imgArr}}" wx:key="{{index}}"></image>
+</view>
+
+
+  <view class="phone_xq" style="border-bottom: 1rpx solid #e4e4e4;margin-bottom:20rpx;">
+    <view class="phone_xh" style="margin-bottom:30rpx;">
+      <text>优惠详情</text>
+    </view>
+    <text> {{info.coupon_price}}元</text>
+  </view>
+  <view class="phone_xq">
+    <view class="phone_xh">
+      <text></text>
+      <text style="color:#666"></text>
+    </view>
+    <text> 支付{{info.order_amount}}元</text>
+  </view>
+</view>
+
+
+
+
+<view class="view_phone">
+  <view hidden class="phone_xh">
+    <text>发票抬头</text>
+    <text style="color:#666"></text>
+  </view>
+  <view hidden class="phone_xq">
+    <view class="phone_xh">
+      <text>企业税号</text>
+      <text style="color:#666"></text>
+    </view>
+    <text></text>
+  </view>
+  
+  <view class="phone_xq">
+    <view class="phone_xh">
+      <text>预约时间</text>
+      <text style="color:#666">{{info.ordertime}}</text>
+    </view>
+    <text></text>
+  </view>
+
+
+<view class="phone_xq">
+    <view class="phone_xh">
+      <text>下单时间</text>
+      <text style="color:#666">{{info.add_time}}</text>
+    </view>
+    <text></text>
+  </view>
+
+<view class="phone_xq">
+    <view class="phone_xh">
+      <text>备注信息</text>
+      <text style="color:#666">{{info.desc}}</text>
+    </view>
+    <text></text>
+  </view>
+
+</view>
+
+
+
+
+<view class="payCon clearfix" style="margin-top:20rpx;">
+
+  <text bindtap="makephone">联系客服</text>
+  
+  <text wx:if="{{info.order_status == 2}}" data-orderid="{{info.orderID}}" data-masterid="{{info.masterID}}" catchtap="appraise">评价</text>
+  <text hidden="{{info.order_status == 0 ? false : true}}" data-orderid="{{info.orderID}}" catchtap="cancelOrder">取消订单</text>
+  <text wx:if="{{info.order_status == 0 && info.cont == 0}}" data-orderid="{{info.orderID}}" catchtap="selectConTime">预约修改</text>
+  <text wx:if="{{info.order_status == 1 && info.shipping_status == 1}}" data-orderid="{{info.orderID}}" catchtap="wc">维修完成</text>
+  
+</view>
+
+
+<!--弹窗-->
+<view class="detailFailureCon" hidden="{{detailFailureFlag ? true : false}}">
+  <view class="detailFailure">
+    <view class="detailFailure_title">
+     请选择取消原因
+    </view>
+    <view class="detailFailure_content">
+         <view class="item">
+         <image wx:if="{{s1 == true}}" bindtap="s1" src="/images/icon_c.png"></image>
+         <image wx:else bindtap="s1" src="/images/icon_y.png"></image>
+         等待太久
+         </view>
+         <view class="item">
+         <image wx:if="{{s2 == true}}" bindtap="s2" src="/images/icon_c.png"></image>
+         <image wx:else bindtap="s2" src="/images/icon_y.png"></image>
+         
+         价格不合理
+         </view>
+         <view class="item">
+         <image wx:if="{{s3 == true}}" bindtap="s3" src="/images/icon_c.png"></image>
+         <image wx:else bindtap="s3" src="/images/icon_y.png"></image>
+         
+         填写信息错误
+         </view>
+         <view class="item">
+         <image wx:if="{{s4 == true}}" bindtap="s4" src="/images/icon_c.png"></image>
+         <image wx:else bindtap="s4" src="/images/icon_y.png"></image>
+         
+         其他
+         </view>
+    </view>
+    <view class="detailFailure_content_tip">
+      {{remark}}
+    </view>
+    <view class="detailFailure_btn">
+      <text class="detailFailure_btn_l" bindtap="cancel">取消</text>
+      <text bindtap="confirm">确定</text>
+    </view>
+  </view>
+</view>
+
+<!--end弹窗-->
+
+
+
+<!--时间蒙层-->
+<view class="timeShade" hidden="{{timeShadeFlag ? true : false}}">
+  <view class="timeSelectCon">
+
+<view class="timeHeader">
+    选择预约时间
+    <text>*每个订单只可改约一次,请确定后在该约</text>
+    </view>
+    
+    <view class="clearfix">
+      <view class="timeSelect_l">
+        <view wx:for="{{dateArr}}" wx:key="{{index}}" class="{{item.class ? 'active' : ''}}" data-index="{{index}}" catchtap="selectDate">{{item.text}}</view>
+      </view>
+      <view class="timeSelect_r">
+        <view wx:for="{{timeArr}}" wx:key="{{index}}" class="{{item.class ? 'active' : ''}}" data-index="{{index}}" data-text="{{item.text}}" catchtap="selectTime">{{item.text}}</view>
+      </view>
+    </view>
+    <view class="timeSelect_btn" catchtap="cancle">取消</view>
+  </view>
+</view>
+
+<!--end时间蒙层-->

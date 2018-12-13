@@ -1,0 +1,150 @@
+page{
+    background: #eff0ef;
+}
+
+.classname{
+  width: 96%;
+  margin: 20rpx auto;
+  border-radius: 20rpx;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+  overflow: hidden;
+}
+.classname:nth-child(1){
+  margin-top: 30rpx;
+}
+.view_botton{
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  overflow: hidden;
+}
+
+.view_top{
+    width: 100%;
+    height: 300rpx;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.view_1{
+    display: flex;
+    flex-direction: row;
+    height: 35%;
+    width: 100%;
+    align-items: center;
+   
+}
+
+.view_1_1{
+color: #fe0000;
+font-weight: bold;
+margin-left: 30rpx;
+}
+
+.view_1_2{
+color: orange;
+font-weight: bold;
+margin-left: 30rpx;
+border: 4rpx orange solid;
+border-radius: 8rpx;
+padding: 10rpx 10rpx;
+height: 50rpx;
+font-size: 26rpx;
+}
+
+.view_1_3{
+color: #009eff;
+font-weight: bold;
+margin-left: 30rpx;
+border: 4rpx #009eff solid;
+border-radius: 8rpx;
+padding: 10rpx 10rpx;
+height: 50rpx;
+font-size: 26rpx;
+}
+
+.text1{
+   
+color: #999;
+margin-left: 30rpx; 
+font-size: 34rpx;
+}
+
+.text2{
+   
+color: #999;
+margin-left: 30rpx; 
+font-size: 34rpx;
+margin-top: 22rpx;
+
+}
+
+
+.text3{
+   
+color: #999;
+margin-left: 30rpx; 
+font-size: 34rpx;
+margin-top: 22rpx;
+}
+
+
+.view_botton{
+    height: 100rpx;
+    width: 100%;
+    margin-top: 6rpx;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+    
+}
+
+
+.view_bottom-left{
+    height: 100%;
+    width: 247rpx;
+    background: #fff;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.view_bottom-right{
+    height: 100%;
+    width: 245rpx;
+    background: #fff;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.view_bottom-left image{
+     width: 55rpx;
+     height: 55rpx;
+
+}
+
+.view_bottom-left text{
+     color: #fe0000;
+     font-size: 36rpx;
+ margin-left: 20rpx;
+
+}
+
+
+.view_bottom-right image{
+     width: 55rpx;
+     height: 55rpx;
+
+}
+
+.view_bottom-right text{
+     color: #fe0000;
+     font-size: 36rpx;
+     margin-left: 20rpx;
+
+}
